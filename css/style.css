@@ -1,0 +1,870 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gugi&family=Lato&family=Roboto&family=Sofia&display=swap');
+
+:root{
+    --light-gray:#2b3032a1;
+    --primary-color:#45ccb8;
+    --border:#2b303218;
+    --text-color:#ff686b;
+    --roboto:"Roboto",sans-serif;
+    --gugi:"Gugi",cursive;
+    --sofia:"Sofia",cursive;
+}
+
+.primary-color{
+    color:var(--primary-color);
+}
+
+.bg-primary-color{
+    background-color: var(--primary-color) !important;
+}
+
+.text-color{
+    color:var(--text-color);
+}
+
+.font-roboto{
+    font-family: var(--roboto);
+}
+
+.lightblue{
+    color:lightblue;
+}
+
+header{
+    background-color: var(--primary-color);
+    font-family: var(--roboto);
+}
+
+header .site-title{
+    font-family: var(--gugi);
+}
+
+.container .dropdown-toggle,
+.container .dropdown-item{
+    font-size: 0.7em;
+}
+
+.header-links a{
+    text-decoration: none;
+    font-size: 0.9em;
+    color:white;
+}
+
+.navbar-nav{
+    padding: 0.8em;
+}
+
+.navbar-nav .nav-link{
+    font-size: 0.9em;
+    color: var(--light-gray) !important;
+}
+
+.navbar-nav .nav-item .nav-link{
+    padding:0 1.3em;
+}
+
+.navbar-nav .basket-icon{
+    margin-right: 7rem !important;
+}
+
+/* slider button effect */
+
+.site-slider{
+    position: relative;
+}
+
+.position-top{
+    position: absolute;
+    top:50%;
+
+}
+
+.site-slider .slider-btn .prev,.site-slider .slider-btn .next{
+    background-color: var(--primary-color);
+    padding: 1rem 1.5rem;
+    border-radius: 10rem;
+    color:whitesmoke;
+    margin: 0 1rem;
+    opacity: 0;
+}
+
+.site-slider:hover .slider-btn .prev,
+.site-slider:hover .slider-btn .next{
+    opacity: 10;
+}
+
+.right-0{
+    right:0;
+}
+
+/* manage the dots below the image */
+
+.slick-dots{
+    display:flex;
+    justify-content: center;
+    margin: 0;
+    padding:1rem 0;
+    list-style-type: none;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+}
+
+.slick-dots li{
+    margin: 0 0.6rem;
+}
+
+.slick-dots button{
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    padding: 0;
+    border:none;
+    background-color: whitesmoke;
+    text-indent: -99999px;
+    border-radius: 100%;
+}
+
+.slick-dots li.slick-active button{
+    transform: scale(2.5);
+    box-shadow:0px 3px 5px 1px rgba(0, 0, 0, 0.205)
+}
+
+/* *{
+    background-color: yellow;
+} */
+
+/* second non automatic corousel effects */
+
+.site-slider-two{
+    position: relative;
+    height: 30%;
+}
+
+.site-slider-two .products{
+    height: 25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-slider-two .product img{
+    width: 90%;
+    margin: auto;
+}
+
+.site-btn .btn-span{
+    padding:0.8rem 1.9rem;
+    border-radius: 4rem;
+    border: 1px solid var(--border);
+    background-color: whitesmoke;
+    color: var(--light-gray);
+}
+
+.slider-two .slick-track .product:hover span{
+    background-color: var(--primary-color);
+}
+
+/* Css effect for Product Grid starts here */
+
+.brand-area{
+    position: relative;
+    top: 150px;
+    background-color: peru;
+}
+
+.product-grid{
+    font-family:Tahoma, Geneva, Verdana, sans-serif;
+    position:relative;
+    
+}
+
+.product-grid .product-image{
+    overflow: hidden;
+    position: relative;
+}
+
+.product-grid .product-image:before{
+    content:"";
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height:100%;
+    opacity:0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: all 0.4s ease-out 0s;
+}
+
+.product-grid:hover .product-image:before{
+    opacity: 1;
+}
+
+.product-grid .product-image a{
+    display: block;
+}
+
+.product-grid .product-image img{
+    width:100%;
+    height: auto;
+}
+
+.product-image .pic-1{
+    opacity: 1;
+    backface-visibility: hidden;
+    transition: all 0.4s ease-out 0s;
+}
+
+.product-grid:hover .product-image .pic-1{
+    opacity: 0;
+}
+
+.product-image .pic-2{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    backface-visibility: hidden;
+    transform: scale(3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.4s ease-out 0s;
+}
+
+.product-grid:hover .product-image .pic-2{
+    opacity:1;
+    transform: scale(1);
+}
+
+.product-image .product-trend-label,
+.product-image .product-discount-label{
+    content: "";
+    color: white;
+    background-color: orange;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 7px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 3;
+
+}
+
+.product-image .product-discount-label{
+    background-color: #e74c3c;
+    left: auto;
+    right: 12px;
+
+}
+
+.product-grid .social{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    z-index: 4;
+}
+
+.product-grid .social li{
+    margin: 0 0 12px;
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: transofrm 0.3s ease-out 0s;
+}
+
+.product-grid:hover .social li{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.product-grid:hover .social li:nth-child(2){
+    transition-delay: 0.1s;
+}
+
+.product-grid:hover .social li:nth-child(3){
+    transition-delay: 0.2s;
+}
+
+.product-grid:hover .social li:nth-child(4){
+    transition-delay: 0.3s;
+}
+
+.product-grid .social li a{
+    color:white;
+    font-size: 22px;
+    transition: all 0.3s;
+}
+
+/* Css effect for Product Grid ends here */
+
+/* services grid starts here */
+
+.xyz{
+    position: relative;
+    top: 300px;
+    /* margin:117px; */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 50vh; */
+    font-family: 'Ubuntu', sans-serif;
+    /* background-color: orange; */
+    width: 100%;
+}
+
+.abc{
+    position: relative;
+    top: 30px;
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.abc .box{
+    position: relative;
+    background: #fff;
+    padding: 20px 40px 40px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.abc .box:nth-child(1){background: linear-gradient(45deg,#45ccb8,#08d7f7);}
+.abc .box:nth-child(2){background: linear-gradient(45deg,#45ccb8,#08d7f7);}
+.abc .box:nth-child(3){background: linear-gradient(45deg,#45ccb8,#08d7f7);}
+.abc .box:nth-child(4){background: linear-gradient(45deg,#45ccb8,#08d7f7);}
+
+.abc .box h2{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 100px;
+    color: #fff;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.abc .box h3{
+    /* position: relative; */
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    color: #fff;
+    z-index: 1;
+    opacity: 0.8;
+    text-transform: uppercase;
+}
+
+.abc .box p{
+    /* position: relative; */
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: #fff;
+    z-index: 1;
+    opacity: 1;
+}
+
+/* services grid ends here */
+h4{
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 0px;
+    color: var(--primary-color);
+    font-family: var(--roboto);
+}
+
+.pqr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* display: block;
+    width: 33%;
+    margin: 100px auto; */
+}
+#midheading{
+    height: 200px;
+    margin-top: 74px;
+    /* justify-content: center;
+    align-items: center; */
+}
+.midtitle{
+    padding: 34px;
+    font-size: 18px;
+    /* border: 1px solid black; */
+    margin-top: auto;
+    color: grey;
+    font-family: var(--sofia);
+}
+
+
+/* brand icons css effect starts */
+
+body {
+    margin: 0px;
+}
+
+.responsive {
+    padding: 5px;
+    /* background-color: black; */
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+}
+
+.gallery {
+    position: relative;
+    /* background-color: orange; */
+    width: 32%;
+    /* border: 2px solid red; */
+    margin: 2px;
+    /* height: 100px; */
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery img:hover{
+    /* background-color: pink; */
+    box-shadow: -10px 10px 10px rgba(0,0,0,0.3);
+}
+
+.happy {
+    padding: 5px;
+    background-color: orange;
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    float: right;
+    clear: both;
+}
+
+/* .site-main .brand-area .experience-area{
+    padding-left: 1rem;
+}
+
+.site-main .brand-area .experience-asrea span{
+    display: block;
+}
+
+.site-main .brand-area .experience-area .years-area{
+    background: url(./assets/client-info-bg.png) no-repeat 45px 20px;
+    padding: 2rem 0;
+    width: 40rem;
+    height: 18rem;
+    padding-left: 8rem;
+    position: relative;
+}
+
+.site-main .brand-area .experience-area .bg-panel{
+    position: absolute;
+    left: -190px; top: 0%;
+    background: #e029290a;
+    width: 400px;
+    height: 400px;
+    margin-left: 340px;
+    z-index: -1;
+}
+
+.site-main .brand-area .experience-area .years-area .years{
+    font: normal bold 84px/40px var(--roboto);
+    color: #854fee;
+    z-index: 2;
+}
+
+.site-main .brand-area .experience-area .years-area h2 > span{
+    font: normal 600 22px/30px var(--roboto);
+}
+
+.site-main .brand-area .experience-area .call-area{
+    padding-left: 10rem;
+} */
+
+
+/* brand icons css effect ends */
+
+
+/* FOOTER STARTS */
+
+.main {
+    max-height: 550px;
+    ;
+    background-color: #45ccb8;
+    color: white;
+    font-size: 38pt;
+    text-align: center;
+    line-height: 550px;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+}
+
+.footer-distributed {
+    background-color: #45ccb8;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 18px sans-serif;
+
+    padding: 55px 50px;
+    margin-top: 520px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-distributed .footer-left {
+    width: 40%;
+}
+
+.footer-distributed h3 {
+    color: #f54646;
+    font: normal 36px 'Cookie', cursive;
+    margin: 20PX;
+}
+
+.footer-distributed h3 span {
+    color: #0a59e0;
+}
+
+
+.footer-distributed .footer-links {
+    color: #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+    color: #2f3a3a;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+.footer-distributed .footer-center {
+    width: 35%;
+}
+
+.footer-distributed .footer-center i {
+    background-color: #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+    color: #5383d3;
+    text-decoration: none;
+    ;
+}
+
+.footer-distributed .footer-right {
+    width: 20%;
+}
+
+.footer-distributed .footer-company-about {
+    line-height: 20px;
+    color: #2f3a3a;;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 2px;
+
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 880px) {
+
+    .footer-distributed {
+        font: bold 14px sans-serif;
+
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-distributed .footer-center i {
+        margin-left: 0;
+    }
+
+    .main {
+        line-height: normal;
+        font-size: auto;
+    }
+
+}
+
+/* FOOTER ENDS */
+
+.con{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: yellow; */
+    top: 401px;
+    }
+
+.square{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square span:nth-child(1){
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    transition: 0.5s;
+    animation: animate 6s linear infinite;
+    }
+
+.square:hover span:nth-child(1){
+    background-color: #33383b;
+    border: none;
+}
+
+.square span:nth-child(2){
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    transition: 0.5s;
+    animation: animate 4s linear infinite;
+    }
+
+.square:hover span:nth-child(2){
+    background-color:#45ccb8;
+    ;
+    border: none;
+}
+
+.square span:nth-child(3){
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    transition: 0.5s;
+    animation: animate2 10s linear infinite;
+    }
+
+.square:hover span:nth-child(3){
+    background-color: #45ccb8;
+    border: none;
+}
+
+@keyframes animate {
+0%{
+    transform: rotate(0deg);
+}
+100%{
+    transform: rotate(360deg);
+}
+}
+@keyframes animate2 {
+0%{
+    transform: rotate(360deg);
+}
+100%{
+    transform: rotate(0deg);
+}
+}
+
+.conten{
+position: relative;
+
+padding: 40px 60px;
+color: black;
+text-align: center;
+transition: 0.5s;
+z-index: 1000;
+}
+
+.conten a{
+position: relative;
+display: inline-block;
+margin-top: 10px;
+border: 2px solid #fff;
+padding: 6px 18px;
+text-decoration: none;
+color: #fff;
+font-weight: 800;
+border-radius: 73% 27% 44% 56% / 49% 44% 56% 51%;
+
+}
+
+.conten a:hover{
+background: whitesmoke;
+color: purple;
+}
+
+@media (max-width: 800px) {
+    .gallery{
+        width: 24%;
+    }
+}
+
+/* css for flip card starts here */
+
+.contain{
+    width: 70%;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* background-color: black; */
+    position: relative;
+    top: 400px;
+}
+.card{
+    position: relative;
+    margin: 20px 0px;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    transition: 1s;
+    box-shadow: inset 300px 0 50px rgba(0,0,0,0.5);
+}
+
+.card:hover{
+    transform: perspective(2000px) rotate(-10deg);
+    box-shadow: inset 20px 0 50px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.card .imgBox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transform-origin: left;
+    z-index: 1;
+    transition: 1s;
+}
+
+.card:hover .imgBox{
+    transform: rotateY(-135deg);
+}
+
+.card .imgBox .img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .details{
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* css for flip card ends here */
